@@ -12,4 +12,3 @@ def selection_sort(lista):
     selection_sort(valores)
     print("Depois de ordenar:", valores)
     
-    print("hhhhhh")
