@@ -15,10 +15,10 @@ def quick_sort(lista):
             
     lista[0], lista[j] = lista[j], lista[0]        
   
-    quick_sort(lista[:j])
-    quick_sort(lista[j+1:])
+    direita = quick_sort(lista[:j])
+    esquerda = quick_sort(lista[j+1:])
     
-    return lista
+    return esquerda + [lista[j]] + direita
 
 lista_desordenada = [3, 7, 8, 5, 2, 1, 9, 6, 4]
 lista_ordenada = quick_sort(lista_desordenada)
