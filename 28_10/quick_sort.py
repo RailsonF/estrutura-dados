@@ -2,9 +2,12 @@ def quick_sort(lista):
     if len(lista) <= 1:
         return lista  
     pivo = lista[0] 
+    # O I COMEÇA NO SEGUNDO ELEMENTO, POIS O PRIMEIRO 
     i = 1
-    j = len(lista) - 1
-
+    #O J COMEÇA NO ÚLTIMO ELEMENTO
+    j = len(lista) - 1 
+    #ESSE PRIMEIRO LOOP ORGANIZA OS ELEMENTOS QUE ESTÃO ERRADOS EM RELAÇÃO AO PIVÔ
+    #ESSE LOOP VAI CONTINUAR ENQUANTO O I FOR MENOR QUE J
     while i < j:
         while i <= j and lista[i] <= pivo:
             i += 1
