@@ -2,9 +2,12 @@ tarefas = []
 estados = []
 
 def add_tarefa(nome_tarefa):
-    tarefas.append(nome_tarefa.lower())
-    estados.append("Pendente")
-    return "Tarefa adicionada com sucesso"
+    if nome_tarefa.lower() in tarefas:
+        return "Erro: Tarefa já existe na lista!"
+    else:
+        tarefas.append(nome_tarefa.lower())
+        estados.append("Pendente")
+        return "Tarefa adicionada com sucesso"
 
 def marcar_concluida(nome_tarefa):
     if nome_tarefa.lower() in tarefas:
@@ -63,9 +66,13 @@ def menu_principal():
         elif opcao == "2":
             nome_tarefa = input("Informe o nome da tarefa:\n")
             marcar_concluida(nome_tarefa)
+            mensagem = marcar_concluida(nome_tarefa)
+            print(mensagem)
         elif opcao == "3":
             nome_tarefa = input("Informe o nome da tarefa:\n")
             remover_tarefas(nome_tarefa)
+            mensagem = remover_tarefas(nome_tarefa)
+            print(mensagem)
         elif opcao == "4":
             listar_tarefas()
         elif opcao == "5":
